@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{CD8C9303-404B-FB8D-6B9B-21988D5CAC0A}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
+    <Files>
+      <File FileName="Assets/Mirror/Runtime/Logging/NetworkHeadlessLogger.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/Ball.cs" Line="5" Column="6" />
+      <File FileName="Assets/Scripts/NetworkManagerPong.cs" Line="22" Column="33" />
+      <File FileName="Assets/Scripts/Player.cs" Line="10" Column="27" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Unity" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Player.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Mirror PreferredExecutionTarget="d27ad540-01a8-461a-9097-1d9ba19434b9" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d27ad540-01a8-461a-9097-1d9ba19434b9" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
