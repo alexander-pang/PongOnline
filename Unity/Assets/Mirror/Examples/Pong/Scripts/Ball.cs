@@ -9,6 +9,17 @@ namespace Mirror.Examples.Pong
         public Rigidbody2D rigidbody2d;
         SpriteRenderer sprite;
 
+        public float serverScore;
+        public float clientScore;
+        public Color onServer = new Color(1, 0, 0);
+        public Color offServer = new Color(0, 0, 1);
+        public Color onClient = new Color(0, 1, 0);
+        public Color offClient = new Color(1, .5f, 1);
+        public bool serverToggle = false;
+        public bool clientToggle = false;
+
+        public bool hasStarted = true;
+
         [SyncVar(hook = nameof(SetBall))]
         Color ballColor;
 
@@ -92,15 +103,26 @@ namespace Mirror.Examples.Pong
                 sprite = GetComponent<SpriteRenderer>();
                 float xpos = sprite.transform.position.x;
                 float ypos = sprite.transform.position.y;
-                if (Math.Abs(xpos + 24.5) < 1.5)
+                //if (Math.Abs(xpos + 24.5) < 1.5)
+                if(col.transform.gameObject.tag == "Left")
                 {
                     //sprite.color = new Color(0, 1, 0, 1);
                     SetBall(sprite.color, sprite.color);
+
+                    //client score incrementing by two, calling in server and client??
+                    clientScore++;
+                    Hud.instance.rightScore.text = clientScore.ToString();
                 }
-                else if (Math.Abs(xpos - 24.5) < 1.5)
+               // else if (Math.Abs(xpos - 24.5) < 1.5)
+                else if(col.transform.gameObject.tag == "Right")
                 {
                     //sprite.color = new Color(1, .92f, .016f, 1);
                     SetBall(sprite.color, sprite.color);
+
+                    
+                    //server score incrementing by two, calling in server and client??
+                    serverScore++;
+                    Hud.instance.leftScore.text = serverScore.ToString();
                 }
             }
         }

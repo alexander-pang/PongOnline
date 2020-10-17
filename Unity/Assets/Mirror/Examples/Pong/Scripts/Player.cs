@@ -9,12 +9,20 @@ namespace Mirror.Examples.Pong
         SpriteRenderer sprite;
         public float speed = 30;
         public Rigidbody2D rigidbody2d;
-        public int serverScore;        public int clientScore;        public Color onServer = new Color(1, 0, 0);        public Color offServer = new Color(0, 0, 1);        public Color onClient = new Color(0, 1, 0);        public Color offClient = new Color(1, .5f, 1);        public bool serverToggle = false;        public bool clientToggle = false;
+        public int serverScore;
+        public int clientScore;
+        public Color onServer = new Color(1, 0, 0);
+        public Color offServer = new Color(0, 0, 1);
+        public Color onClient = new Color(0, 1, 0);
+        public Color offClient = new Color(1, .5f, 1);
+        public bool serverToggle = false;
+        public bool clientToggle = false;
 
         public bool hasStarted = true;
 
-        public Text leftScoreText;
-        public Text rightScoreText;
+        //public Text leftScoreText;
+        //public Text rightScoreText;
+
         //public Text initialValue = Text
         //public Hud hud = new Hud("0","0","0","0");
 
@@ -52,20 +60,46 @@ namespace Mirror.Examples.Pong
 
         private void OnCollisionEnter2D(Collision2D col)
         {
-            if (isLocalPlayer)            {
+            if (isLocalPlayer)
+            {
                 //changes server paddle on the server screen
                 //racketColor = new Color(0, 1, 1);
-                sprite = GetComponent<SpriteRenderer>();                if (serverToggle)                {                    ChangeColor(sprite, onServer);                    serverToggle = !serverToggle;                    serverScore++;                    Hud.instance.leftScore.text = serverScore.ToString();                }                else                {                    ChangeColor(sprite, offServer);                    serverToggle = !serverToggle;                    serverScore++;                    Hud.instance.leftScore.text = serverScore.ToString();                }            }            else            {
-                //changes the client paddle on the server screen
-                //racketColor = new Color(1, 0, 0);
-                sprite = GetComponent<SpriteRenderer>();                if (clientToggle)                {                    ChangeColor(sprite, onClient);                    clientToggle = !clientToggle;                    clientScore++;
-                    Hud.instance.rightScore.text = clientScore.ToString();
+                sprite = GetComponent<SpriteRenderer>();
+                if (serverToggle)
+                {
+                    ChangeColor(sprite, onServer);
+                    serverToggle = !serverToggle;
+                    //serverScore++;
+                    //Hud.instance.leftScore.text = serverScore.ToString();
 
                 }
                 else
                 {
-                    ChangeColor(sprite, offClient);                    clientToggle = !clientToggle;                    clientScore++;
-                    Hud.instance.rightScore.text = clientScore.ToString();
+                    ChangeColor(sprite, offServer);
+                    serverToggle = !serverToggle;
+                    //serverScore++;
+                    //Hud.instance.leftScore.text = serverScore.ToString();
+                }
+            }
+            else
+            {
+                //changes the client paddle on the server screen
+                //racketColor = new Color(1, 0, 0);
+                sprite = GetComponent<SpriteRenderer>();
+                if (clientToggle)
+                {
+                    ChangeColor(sprite, onClient);
+                    clientToggle = !clientToggle;
+                    //clientScore++;
+                    //Hud.instance.rightScore.text = clientScore.ToString();
+
+                }
+                else
+                {
+                    ChangeColor(sprite, offClient);
+                    clientToggle = !clientToggle;
+                    //clientScore++;
+                    //Hud.instance.rightScore.text = clientScore.ToString();
                 }
             }
         }
