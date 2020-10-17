@@ -11,6 +11,13 @@ namespace Mirror.Examples.Pong
         public Transform leftRacketSpawn;
         public Transform rightRacketSpawn;
         GameObject ball;
+        GameObject LeftWall;
+        GameObject RightWall;
+        SpriteRenderer sprite;
+
+        Rigidbody2D rb;
+
+        public Rigidbody2D rigidbody2d;
 
         public override void OnServerAddPlayer(NetworkConnection conn)
         {
@@ -23,7 +30,17 @@ namespace Mirror.Examples.Pong
             if (numPlayers == 2)
             {
                 ball = Instantiate(spawnPrefabs.Find(prefab => prefab.name == "Ball"));
+                LeftWall = Instantiate(spawnPrefabs.Find(prefab => prefab.name == "Left Trigger"));
+                RightWall = Instantiate(spawnPrefabs.Find(prefab => prefab.name == "Right Trigger"));
                 NetworkServer.Spawn(ball);
+                NetworkServer.Spawn(LeftWall);
+                NetworkServer.Spawn(RightWall);
+                //sprite = ball.GetComponent<SpriteRenderer>();
+                //sprite.color = new Color(1, .92f, .016f, 1);
+                //sprite.size.Set(5, 5);
+                //rb = ball.GetComponent<Rigidbody2D>();
+                //rb.velocity = Vector2.right * 0;
+
             }
         }
 

@@ -83,6 +83,7 @@
     <Compile Include="Assets\Mirror\Examples\MultipleAdditiveScenes\Scripts\Reward.cs" />
     <Compile Include="Assets\Mirror\Examples\MultipleAdditiveScenes\Scripts\Spawner.cs" />
     <Compile Include="Assets\Mirror\Examples\Pong\Scripts\Ball.cs" />
+    <Compile Include="Assets\Mirror\Examples\Pong\Scripts\Hud.cs" />
     <Compile Include="Assets\Mirror\Examples\Pong\Scripts\NetworkManagerPong.cs" />
     <Compile Include="Assets\Mirror\Examples\Pong\Scripts\Player.cs" />
     <Compile Include="Assets\Mirror\Examples\Room\Scripts\NetworkRoomManagerExt.cs" />

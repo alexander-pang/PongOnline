@@ -1,13 +1,12 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - GameController
-    - Hud
-    - ScoreTrigger
+    - Mirror.Examples.Pong.wall
     Mirror.Components.dll:
     - Mirror.NetworkTransform
     Mirror.Examples.dll:
     - Mirror.Examples.Pong.Ball
+    - Mirror.Examples.Pong.Hud
     - Mirror.Examples.Pong.NetworkManagerPong
     - Mirror.Examples.Pong.Player
     Mirror.dll:
@@ -65,35 +64,37 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11264}
-    - Class: 114
       Script: {instanceID: 11268}
     - Class: 114
-      Script: {instanceID: 11368}
+      Script: {instanceID: 11272}
     - Class: 114
-      Script: {instanceID: 11616}
+      Script: {instanceID: 11372}
     - Class: 114
-      Script: {instanceID: 12416}
+      Script: {instanceID: 11620}
     - Class: 114
-      Script: {instanceID: 13032}
+      Script: {instanceID: 11946}
     - Class: 114
-      Script: {instanceID: 13850}
+      Script: {instanceID: 12422}
     - Class: 114
-      Script: {instanceID: 14060}
+      Script: {instanceID: 12746}
     - Class: 114
-      Script: {instanceID: 14148}
+      Script: {instanceID: 13040}
     - Class: 114
-      Script: {instanceID: 14424}
+      Script: {instanceID: 13862}
     - Class: 114
-      Script: {instanceID: 14440}
+      Script: {instanceID: 14072}
     - Class: 114
-      Script: {instanceID: 14778}
+      Script: {instanceID: 14082}
     - Class: 114
-      Script: {instanceID: 15926}
+      Script: {instanceID: 14162}
     - Class: 114
-      Script: {instanceID: 15940}
+      Script: {instanceID: 14438}
     - Class: 114
-      Script: {instanceID: 17996}
+      Script: {instanceID: 14454}
+    - Class: 114
+      Script: {instanceID: 14792}
+    - Class: 114
+      Script: {instanceID: 21436}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -275,12 +276,6 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
-      Hash: 6496be96a59cdd6518b1c9a15f52cecf
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: NetworkManagerPong
-  - hash:
-      serializedVersion: 2
       Hash: 7ab0e790220bdca831fdd886b339039d
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -345,6 +340,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: PhysicsRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: a20ec3e1b667698a6301385498d319ce
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: Mirror.Examples.Pong
+    className: wall
   - hash:
       serializedVersion: 2
       Hash: e850d7a8c8e5dff66dade7e00eb97103
@@ -629,12 +630,6 @@ ScriptsOnlyBuild:
     className: Reward
   - hash:
       serializedVersion: 2
-      Hash: e87f50864f8a979f1228e8c69bd62658
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Ball
-  - hash:
-      serializedVersion: 2
       Hash: f84d945e5e1ca985698660fc26e9657f
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -803,7 +798,7 @@ ScriptsOnlyBuild:
     className: ServerListUIItem
   - hash:
       serializedVersion: 2
-      Hash: 1088b99d0c88ca05dcb48022854c0cd7
+      Hash: 50884a5a4c8c2e34655ff4bab110700a
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.Pong
     className: NetworkManagerPong
@@ -911,7 +906,7 @@ ScriptsOnlyBuild:
     className: NetworkTransform
   - hash:
       serializedVersion: 2
-      Hash: e87f50864f8a979f1228e8c69bd62658
+      Hash: e86016bd265d134938deadf9a5ae92f7
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.Pong
     className: Player
@@ -963,12 +958,6 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Components.dll
     namespaceName: Mirror
     className: NetworkTransformChild
-  - hash:
-      serializedVersion: 2
-      Hash: e87f50864f8a979f1228e8c69bd62658
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Player
   - hash:
       serializedVersion: 2
       Hash: caa533b001ae39b864ba8425019e2268
@@ -1079,21 +1068,9 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 3d49ba61afeeabe5dae7f0cd44678967
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ScoreTrigger
-  - hash:
-      serializedVersion: 2
-      Hash: c658d60411a72dc36e0458ccddb5f133
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: GameController
-  - hash:
-      serializedVersion: 2
       Hash: a58f5b691ac27719058157a8390f5be6
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
+    assemblyName: Mirror.Examples.dll
+    namespaceName: Mirror.Examples.Pong
     className: Hud
   platform: 2
   scenePathNames:
