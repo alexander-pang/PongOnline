@@ -64,37 +64,37 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11992}
+      Script: {instanceID: 11988}
     - Class: 114
-      Script: {instanceID: 11994}
+      Script: {instanceID: 11990}
     - Class: 114
-      Script: {instanceID: 12094}
+      Script: {instanceID: 12090}
     - Class: 114
-      Script: {instanceID: 12342}
+      Script: {instanceID: 12338}
     - Class: 114
-      Script: {instanceID: 12664}
+      Script: {instanceID: 12660}
     - Class: 114
-      Script: {instanceID: 13140}
+      Script: {instanceID: 13136}
     - Class: 114
-      Script: {instanceID: 13702}
+      Script: {instanceID: 13698}
     - Class: 114
-      Script: {instanceID: 13756}
+      Script: {instanceID: 13752}
     - Class: 114
-      Script: {instanceID: 14574}
+      Script: {instanceID: 14570}
     - Class: 114
-      Script: {instanceID: 14782}
+      Script: {instanceID: 14778}
     - Class: 114
-      Script: {instanceID: 14868}
+      Script: {instanceID: 14864}
     - Class: 114
-      Script: {instanceID: 15142}
+      Script: {instanceID: 15138}
     - Class: 114
-      Script: {instanceID: 15158}
+      Script: {instanceID: 15154}
     - Class: 114
-      Script: {instanceID: 15492}
+      Script: {instanceID: 15488}
     - Class: 114
-      Script: {instanceID: 18454}
+      Script: {instanceID: 17542}
     - Class: 114
-      Script: {instanceID: 18456}
+      Script: {instanceID: 17544}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -582,7 +582,7 @@ ScriptsOnlyBuild:
     className: Hud
   - hash:
       serializedVersion: 2
-      Hash: 4a9299f5e7a2f91fe3c16f48e5ee51dc
+      Hash: a27acfe69ed3f4f1e937f1ebf28cd086
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.Pong
     className: Ball
@@ -1075,4 +1075,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/PongOnline.unity
-  playerPath: C:/Users/ashle/Desktop/Unity.exe
+  playerPath: /Users/Alex/Desktop/gameDev/test/Unity.exe

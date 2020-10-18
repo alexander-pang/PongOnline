@@ -9,8 +9,7 @@ namespace Mirror.Examples.Pong
         public Rigidbody2D rigidbody2d;
         SpriteRenderer sprite;
 
-        public float serverScore;
-        public float clientScore;
+        
         public Color onServer = new Color(1, 0, 0);
         public Color offServer = new Color(0, 0, 1);
         public Color onClient = new Color(0, 1, 0);
@@ -19,20 +18,46 @@ namespace Mirror.Examples.Pong
         public bool clientToggle = false;
 
         public bool hasStarted = true;
+        public Hud hud;
 
         [SyncVar(hook = nameof(SetBall))]
         Color ballColor;
+
+        [SyncVar(hook = nameof(CmdLeftScore))]
+        public int serverScore;
+
+        [SyncVar(hook = nameof(CmdRightScore))]
+        public int clientScore;
+
+        [Command]
+        void CmdLeftScore(int oldScore, int newScore)
+        {
+            serverScore = newScore;
+            Update();
+        }
+
+        [Command]
+        void CmdRightScore(int oldScore, int newScore)
+        {
+            clientScore = newScore;
+            UpdateRightScore();
+        }
+
+        private void Update()
+        {
+            Hud.instance.leftScore.text = serverScore.ToString();
+        }
+
+        private void UpdateRightScore()
+        {
+            Hud.instance.rightScore.text = clientScore.ToString();
+        }
 
         void SetBall(Color oldColor, Color newColor)
         {
             sprite = GetComponent<SpriteRenderer>();
             sprite.color = newColor; //new Color (0,0,1,1);
             //sprite.color = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-        }
-
-        private void Update()
-        {
-            
         }
 
         public override void OnStartServer()
@@ -110,8 +135,12 @@ namespace Mirror.Examples.Pong
                     SetBall(sprite.color, sprite.color);
 
                     //client score incrementing by two, calling in server and client??
-                    clientScore++;
-                    Hud.instance.rightScore.text = clientScore.ToString();
+                    //handles all right score syncing
+                    int prevScore = clientScore;
+                    int nextScore = clientScore + 1;
+                    clientScore = nextScore;
+                    Hud.instance.rightScore.text = serverScore.ToString();
+                    CmdRightScore(prevScore, nextScore);
                 }
                // else if (Math.Abs(xpos - 24.5) < 1.5)
                 else if(col.transform.gameObject.tag == "Right")
@@ -121,10 +150,19 @@ namespace Mirror.Examples.Pong
 
                     
                     //server score incrementing by two, calling in server and client??
-                    serverScore++;
+
+                    //handles all left score syncing
+                    int oldScore = serverScore;
+                    int newScore = serverScore + 1;
+                    serverScore = newScore;
                     Hud.instance.leftScore.text = serverScore.ToString();
+                    //Hud.instance.leftScore.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
+                    CmdLeftScore(oldScore,newScore);
+                    //Hud.instance.leftScore.GetComponent<NetworkIdentity>().RemoveClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
+
                 }
             }
         }
+
     }
 }
