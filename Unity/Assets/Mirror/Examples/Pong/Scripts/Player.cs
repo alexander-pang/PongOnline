@@ -9,8 +9,8 @@ namespace Mirror.Examples.Pong
         SpriteRenderer sprite;
         public float speed = 30;
         public Rigidbody2D rigidbody2d;
-        public int serverScore;
-        public int clientScore;
+        //public int serverScore;
+        //public int clientScore;
         public Color onServer = new Color(1, 0, 0);
         public Color offServer = new Color(0, 0, 1);
         public Color onClient = new Color(0, 1, 0);
@@ -45,8 +45,8 @@ namespace Mirror.Examples.Pong
                     //racketColor = new Color(0, 0, 1);
                     sprite = GetComponent<SpriteRenderer>();
                     //sprite.color = racketColor;
-                    serverScore = 0;
-                    clientScore = 0;
+                    //serverScore = 0;
+                    //clientScore = 0;
                     hasStarted = false;
                 }
             }
