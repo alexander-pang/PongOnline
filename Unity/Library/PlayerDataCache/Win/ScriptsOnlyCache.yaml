@@ -64,37 +64,37 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11988}
+      Script: {instanceID: 11992}
     - Class: 114
-      Script: {instanceID: 11990}
+      Script: {instanceID: 11994}
     - Class: 114
-      Script: {instanceID: 12090}
+      Script: {instanceID: 12094}
     - Class: 114
-      Script: {instanceID: 12338}
+      Script: {instanceID: 12342}
     - Class: 114
-      Script: {instanceID: 12660}
+      Script: {instanceID: 12664}
     - Class: 114
-      Script: {instanceID: 13136}
+      Script: {instanceID: 13140}
     - Class: 114
-      Script: {instanceID: 13698}
+      Script: {instanceID: 13702}
     - Class: 114
-      Script: {instanceID: 13752}
+      Script: {instanceID: 13756}
     - Class: 114
-      Script: {instanceID: 14570}
+      Script: {instanceID: 14574}
     - Class: 114
-      Script: {instanceID: 14778}
+      Script: {instanceID: 14782}
     - Class: 114
-      Script: {instanceID: 14864}
+      Script: {instanceID: 14868}
     - Class: 114
-      Script: {instanceID: 15138}
+      Script: {instanceID: 15142}
     - Class: 114
-      Script: {instanceID: 15154}
+      Script: {instanceID: 15158}
     - Class: 114
-      Script: {instanceID: 15488}
+      Script: {instanceID: 15492}
     - Class: 114
-      Script: {instanceID: 17542}
+      Script: {instanceID: 17548}
     - Class: 114
-      Script: {instanceID: 17544}
+      Script: {instanceID: 17550}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 124
@@ -582,7 +582,7 @@ ScriptsOnlyBuild:
     className: Hud
   - hash:
       serializedVersion: 2
-      Hash: a27acfe69ed3f4f1e937f1ebf28cd086
+      Hash: 4d7fbc243a673af4fca220761e26977c
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.Pong
     className: Ball
@@ -912,7 +912,7 @@ ScriptsOnlyBuild:
     className: NetworkTransform
   - hash:
       serializedVersion: 2
-      Hash: 4cd7eb67b5d6c026dae05ac9a13a77e4
+      Hash: 6081323719e17e4b0de1c5a8e5664b58
     assemblyName: Mirror.Examples.dll
     namespaceName: Mirror.Examples.Pong
     className: Player
@@ -1075,4 +1075,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/Scenes/PongOnline.unity
-  playerPath: /Users/Alex/Desktop/gameDev/test/Unity.exe
+  playerPath: C:/Users/ashle/Desktop/Unity.exe

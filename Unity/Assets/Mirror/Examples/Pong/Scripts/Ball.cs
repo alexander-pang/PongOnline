@@ -20,14 +20,14 @@ namespace Mirror.Examples.Pong
         public bool hasStarted = true;
         public Hud hud;
 
-        [SyncVar(hook = nameof(SetBall))]
+        [SyncVar(hook = nameof(CmdSetBall))]
         Color ballColor;
 
         [SyncVar(hook = nameof(CmdLeftScore))]
-        public int serverScore;
+        public int serverScore=0;
 
         [SyncVar(hook = nameof(CmdRightScore))]
-        public int clientScore;
+        public int clientScore=0;
 
         [Command]
         void CmdLeftScore(int oldScore, int newScore)
@@ -40,20 +40,16 @@ namespace Mirror.Examples.Pong
         void CmdRightScore(int oldScore, int newScore)
         {
             clientScore = newScore;
-            UpdateRightScore();
+            Update();
         }
 
         private void Update()
         {
             Hud.instance.leftScore.text = serverScore.ToString();
-        }
-
-        private void UpdateRightScore()
-        {
             Hud.instance.rightScore.text = clientScore.ToString();
         }
 
-        void SetBall(Color oldColor, Color newColor)
+        void CmdSetBall(Color oldColor, Color newColor)
         {
             sprite = GetComponent<SpriteRenderer>();
             sprite.color = newColor; //new Color (0,0,1,1);
@@ -112,7 +108,7 @@ namespace Mirror.Examples.Pong
 
                 sprite = GetComponent<SpriteRenderer>();
                 Color newColor = UnityEngine.Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
-                SetBall(sprite.color, newColor);
+                CmdSetBall(sprite.color, newColor);
 
                 // Calculate x direction via opposite collision
                 float x = col.relativeVelocity.x > 0 ? 1 : -1;
@@ -129,35 +125,36 @@ namespace Mirror.Examples.Pong
                 float xpos = sprite.transform.position.x;
                 float ypos = sprite.transform.position.y;
                 //if (Math.Abs(xpos + 24.5) < 1.5)
+                
                 if(col.transform.gameObject.tag == "Left")
                 {
                     //sprite.color = new Color(0, 1, 0, 1);
-                    SetBall(sprite.color, sprite.color);
+                    CmdSetBall(sprite.color, sprite.color);
 
                     //client score incrementing by two, calling in server and client??
                     //handles all right score syncing
                     int prevScore = clientScore;
-                    int nextScore = clientScore + 1;
-                    clientScore = nextScore;
-                    Hud.instance.rightScore.text = serverScore.ToString();
-                    CmdRightScore(prevScore, nextScore);
+                    int newScore = clientScore +1;
+                    clientScore= newScore;
+                    //Hud.instance.rightScore.text = serverScore.ToString();
+                    CmdRightScore(prevScore, newScore);
                 }
                // else if (Math.Abs(xpos - 24.5) < 1.5)
                 else if(col.transform.gameObject.tag == "Right")
                 {
                     //sprite.color = new Color(1, .92f, .016f, 1);
-                    SetBall(sprite.color, sprite.color);
+                    CmdSetBall(sprite.color, sprite.color);
 
                     
                     //server score incrementing by two, calling in server and client??
 
                     //handles all left score syncing
                     int oldScore = serverScore;
-                    int newScore = serverScore + 1;
-                    serverScore = newScore;
-                    Hud.instance.leftScore.text = serverScore.ToString();
+                    int newServScore = serverScore +1;
+                    serverScore = newServScore;
+                    //Hud.instance.leftScore.text = serverScore.ToString();
                     //Hud.instance.leftScore.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
-                    CmdLeftScore(oldScore,newScore);
+                    CmdLeftScore(oldScore,newServScore);
                     //Hud.instance.leftScore.GetComponent<NetworkIdentity>().RemoveClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
 
                 }
