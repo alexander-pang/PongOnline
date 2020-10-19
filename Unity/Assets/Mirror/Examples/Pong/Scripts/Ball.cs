@@ -45,8 +45,16 @@ namespace Mirror.Examples.Pong
 
         private void Update()
         {
-            Hud.instance.leftScore.text = serverScore.ToString();
-            Hud.instance.rightScore.text = clientScore.ToString();
+            Hud.instance.leftScore.text = (serverScore / 2).ToString();
+            Hud.instance.rightScore.text = (clientScore / 2).ToString();
+            if (serverScore == 10)
+            {
+                Hud.instance.leftWin.enabled = true;
+            }
+            else if(clientScore == 10)
+            {
+                Hud.instance.rightWin.enabled = true;
+            }
         }
 
         void CmdSetBall(Color oldColor, Color newColor)
@@ -86,6 +94,12 @@ namespace Mirror.Examples.Pong
             // ||
             // || -1 <- at the bottom of the racket
             return (ballPos.y - racketPos.y) / racketHeight;
+        }
+
+        void ResetBall()
+        {
+            transform.position = Vector2.zero;
+            rigidbody2d.velocity = Vector2.right * speed;
         }
 
         // only call this on server
@@ -138,6 +152,7 @@ namespace Mirror.Examples.Pong
                     clientScore= newScore;
                     //Hud.instance.rightScore.text = serverScore.ToString();
                     CmdRightScore(prevScore, newScore);
+                    ResetBall();
                 }
                // else if (Math.Abs(xpos - 24.5) < 1.5)
                 else if(col.transform.gameObject.tag == "Right")
@@ -156,6 +171,7 @@ namespace Mirror.Examples.Pong
                     //Hud.instance.leftScore.GetComponent<NetworkIdentity>().AssignClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
                     CmdLeftScore(oldScore,newServScore);
                     //Hud.instance.leftScore.GetComponent<NetworkIdentity>().RemoveClientAuthority(this.GetComponent<NetworkIdentity>().connectionToClient);
+                    ResetBall();
 
                 }
             }

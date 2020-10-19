@@ -570,14 +570,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62f23a6692f5f4e6493229a085f649f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastSyncTime: 0
-  syncMode: 0
-  syncInterval: 0.1
-  netIdentityCache: {fileID: 0}
-  leftScore: 0
-  rightScore: 0
-  leftScoreText: {fileID: 2026199656}
-  rightScoreText: {fileID: 740467026}
 --- !u!114 &850146806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,12 +615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03a8f4caffe146fc8758ee296a1a51a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lastSyncTime: 0
-  syncMode: 0
-  syncInterval: 0.1
-  netIdentityCache: {fileID: 0}
-  leftScore: 0
-  rightScore: 0
 --- !u!4 &928757378
 Transform:
   m_ObjectHideFlags: 0
@@ -660,7 +646,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1215367741
 RectTransform:
   m_ObjectHideFlags: 0
@@ -677,8 +663,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -66, y: -72}
-  m_SizeDelta: {x: 80, y: 100}
+  m_AnchoredPosition: {x: -132.62, y: -72}
+  m_SizeDelta: {x: 213.24283, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1215367742
 MonoBehaviour:
@@ -712,7 +698,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: You Win!
 --- !u!222 &1215367743
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -974,7 +960,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1443483870
 RectTransform:
   m_ObjectHideFlags: 0
@@ -991,8 +977,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 61, y: -72}
-  m_SizeDelta: {x: 80, y: 100}
+  m_AnchoredPosition: {x: 130.5, y: -72}
+  m_SizeDelta: {x: 218.99426, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1443483871
 MonoBehaviour:
@@ -1026,7 +1012,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: You Win!
 --- !u!222 &1443483872
 CanvasRenderer:
   m_ObjectHideFlags: 0
